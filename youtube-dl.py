@@ -1,6 +1,8 @@
 from pytube import YouTube
 import time
 
+save_path = "C:/Users/Veikk/OneDrive/Työpöytä/youtube_downloads"
+
 def __main__():
     link = input("video URL: ")
     yt = YouTube(link)
@@ -8,7 +10,7 @@ def __main__():
     try:
         if yt is not None:
             print("Downloading video: " + yt.title)
-            yt.download("C:/Users/Veikka/Desktop/Youtube_downloads", str(yt.title) + ".mp4")
+            yt.download(save_path, str(yt.title) + ".mp4")
             print("Download successful")
             time.sleep(3)
     except:
